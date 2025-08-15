@@ -53,3 +53,22 @@ def remove(x:int, list:SeqLinearList):
         list.last = n-1
     
     return removed
+
+# examples
+if __name__ == "__main__":
+    # Create a sequential linear list
+    max_size = 5
+    data = [SeqLinearNode(-1) for i in range(max_size)]
+    seq_list = SeqLinearList(max=max_size, last=0, data=data)
+
+    # Search for a node
+    result = search(3, seq_list)
+    print(f"Search result: {result.key if result else 'Not found'}")
+
+    # Insert a new node
+    new_node = SeqLinearNode(5)
+    insert(new_node, seq_list)
+
+    # Remove a node
+    removed_node = remove(2, seq_list)
+    print(f"Removed node: {removed_node.key if removed_node else 'Not found'}")
